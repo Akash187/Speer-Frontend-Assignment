@@ -1,7 +1,9 @@
 import '@mantine/core/styles.css'
+import '@/styles/index.css'
 
 import { MantineProvider, createTheme } from '@mantine/core'
-import Root from '@/components/layout/Root'
+import { RouterProvider } from 'react-router-dom'
+import AppRouter from '@/routes/AppRouter'
 
 const theme = createTheme({
 	primaryColor: 'green'
@@ -11,7 +13,7 @@ function App() {
 	return (
 		<>
 			<MantineProvider theme={theme}>
-				<Root />
+				<RouterProvider router={AppRouter} />
 			</MantineProvider>
 		</>
 	)

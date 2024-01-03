@@ -1,16 +1,27 @@
-import { Box, Text } from '@mantine/core'
+import { Box, Group, Text } from '@mantine/core'
 import classes from '@/styles/NavItem.module.css'
+import { NavLink, useLocation } from 'react-router-dom'
+import { TablerIconsProps } from '@tabler/icons-react'
 
 type IProps = {
 	title: string
-	isActive: boolean
+	to: string
+	icon: (props: TablerIconsProps) => JSX.Element
 }
 
-const NavItem = ({ title, isActive }: IProps) => {
+const NavItem = ({ title, to, icon: Icon }: IProps) => {
+	const location = useLocation()
+
 	return (
-		<Box className={classes.navItem}>
-			<Text className={classes.title}>{title}</Text>
-			<Box data-active={isActive} className={classes.underline}></Box>
+		<Box component={NavLink} to={to} className={classes.navItem}>
+			<Group gap="xs">
+				<Icon className={classes.icon} />
+				<Text className={classes.title}>{title}</Text>
+			</Group>
+			<Box
+				data-active={location.pathname === to}
+				className={classes.underline}
+			></Box>
 		</Box>
 	)
 }

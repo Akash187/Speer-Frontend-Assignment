@@ -22,6 +22,12 @@
   }
 }
 
+.icon {
+  @media (max-width: $mantine-breakpoint-xs) {
+    display: none;
+  }
+}
+
 .underline {
   border-bottom             : 3px solid transparent;
   border-top-right-radius   : 1.5px;
