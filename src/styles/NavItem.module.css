@@ -1,0 +1,39 @@
+.navItem {
+  position   : relative;
+  height     : 100%;
+  display    : flex;
+  align-items: center;
+  padding    : var(--mantine-spacing-xs) var(--mantine-spacing-md);
+
+  @media (max-width: 22em) {
+    padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  }
+
+  @mixin hover {
+    background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6));
+  }
+}
+
+.title {
+  font-weight: 600;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-weight: 400;
+  }
+}
+
+.underline {
+  border-bottom             : 3px solid transparent;
+  border-top-right-radius   : 1.5px;
+  border-top-left-radius    : 1.5px;
+  border-bottom-right-radius: 1.5px;
+  border-bottom-left-radius : 1.5px;
+  width                     : 100%;
+  position                  : absolute;
+  bottom                    : 0px;
+  left                      : 0px;
+
+  &[data-active="true"] {
+    border-bottom-color: var(--mantine-color-green-6);
+  }
+}

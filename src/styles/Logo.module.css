@@ -1,0 +1,8 @@
+.logoSmall {
+  height: 1.5rem;
+  width : auto;
+
+  @media (max-width: 22em) {
+    height: 1rem;
+  }
+}
