@@ -5,7 +5,7 @@ const PageLoader = () => {
 	return (
 		<Box>
 			<Stack h="calc(100vh - 120px)" justify="center" align="center" gap="xs">
-				<Image style={{ height: '2.5rem', width: 'auto' }} src={logo} />
+				<Image style={{ height: '4rem', width: 'auto' }} src={logo} />
 				<Loader variant="oval" />
 			</Stack>
 		</Box>
