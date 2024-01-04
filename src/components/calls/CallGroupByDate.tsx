@@ -16,7 +16,7 @@ const CallGroupByDate = ({ callGroup }: IProps) => {
 				label={<Text>{callGroup.groupDate}</Text>}
 			/>
 			{callGroup.calls.map((call) => (
-				<CallWithDetail call={call} />
+				<CallWithDetail key={call.id} call={call} />
 			))}
 		</Stack>
 	)
