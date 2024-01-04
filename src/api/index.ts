@@ -34,6 +34,21 @@ export const archieveCall = async (call_id: string) => {
 	return 'Succesfully Archieved Call.'
 }
 
+export const archieveCalls = async (call_ids: string[]) => {
+	const promises: Promise<string>[] = []
+	call_ids.forEach((id) => {
+		promises.push(archieveCall(id))
+	})
+
+	const response = await Promise.all(promises)
+
+	if (!response) {
+		throw Error('Failed to Archieve all calls.')
+	}
+
+	return 'Succesfully Archieved all calls.'
+}
+
 export const unarchieveCall = async (call_id: string) => {
 	const response = await fetch(`${BASEURL}/activities/${call_id}`, {
 		method: 'PATCH',
@@ -49,4 +64,19 @@ export const unarchieveCall = async (call_id: string) => {
 	}
 
 	return 'Succesfully Unarchieved Call.'
+}
+
+export const unarchieveCalls = async (call_ids: string[]) => {
+	const promises: Promise<string>[] = []
+	call_ids.forEach((id) => {
+		promises.push(unarchieveCall(id))
+	})
+
+	const response = await Promise.all(promises)
+
+	if (!response) {
+		throw Error('Failed to unarchieve all calls.')
+	}
+
+	return 'Succesfully Unarchieved all calls.'
 }
