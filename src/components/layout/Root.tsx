@@ -10,7 +10,7 @@ const Root = () => {
 			<Header />
 			<Suspense fallback={<PageLoader />}>
 				<AppShell.Main px={0}>
-					<Container>
+					<Container size="sm">
 						<Outlet />
 					</Container>
 				</AppShell.Main>

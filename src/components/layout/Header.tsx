@@ -7,7 +7,7 @@ import { IconInbox, IconArchive } from '@tabler/icons-react'
 const Header = () => {
 	return (
 		<AppShell.Header>
-			<Container h="100%">
+			<Container size="sm" h="100%">
 				<Group h="100%" justify="space-between" style={{ flex: 1 }}>
 					<Logo />
 					<Group h="100%" gap="sm">
