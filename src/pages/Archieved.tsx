@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query'
 
 const Archieved = () => {
 	const { isLoading, isError, data } = useQuery({
-		queryKey: ['all-activiites'],
+		queryKey: ['archieved-calls'],
 		queryFn: getArchievedCalls
 	})
 

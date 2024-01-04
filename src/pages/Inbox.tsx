@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query'
 
 const Inbox = () => {
 	const { isLoading, isError, data } = useQuery({
-		queryKey: ['all-activiites'],
+		queryKey: ['inbox-calls'],
 		queryFn: getInboxCalls
 	})
 
