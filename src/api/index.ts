@@ -80,3 +80,14 @@ export const unarchieveCalls = async (call_ids: string[]) => {
 
 	return 'Succesfully Unarchieved all calls.'
 }
+
+export const resetCalls = async () => {
+	const response = await fetch(`${BASEURL}/reset`, {
+		method: 'PATCH'
+	})
+	if (!response.ok) {
+		throw Error('Failed to reset calls.')
+	}
+
+	return 'Succesfully reset calls.'
+}
