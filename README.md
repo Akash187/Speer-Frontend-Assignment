@@ -2,7 +2,7 @@
 
 ### [Live Demo Link](https://speer-assignment.netlify.app/)
 
-### [Demo Video Link](https://drive.google.com/file/d/1Nbwg87YSQgr4vMq4DWZovoRp0X-UAIIw/view?usp=sharing)
+### [Demo Video Link](https://drive.google.com/file/d/1U-7jP-bCgBS4rITlwIgHdlUjRQvfjsI6/view?usp=sharing)
 
 ## Features
 1. **Typescript** for better type support.
@@ -12,5 +12,8 @@
 5. **date-fns** to handle dates.
 6. Responsive UI.
 7. Code splitting using Suspense.
+8. Zustand for state management.
+9. Error Handling and Notification.
+10. Skeleton Loader.
 
 [Original Assignment Link](https://github.com/speer-technologies/aircall)
