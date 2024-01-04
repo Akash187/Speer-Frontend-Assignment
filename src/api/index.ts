@@ -9,3 +9,10 @@ export const getInboxCalls = async () => {
 	const inboxCall = result.filter((call) => !call.is_archived)
 	return groupCallByDate(inboxCall)
 }
+
+export const getArchievedCalls = async () => {
+	const res = await fetch(`${BASEURL}/activities`)
+	const result: Call[] = await res.json()
+	const archievedCall = result.filter((call) => call.is_archived)
+	return groupCallByDate(archievedCall)
+}
