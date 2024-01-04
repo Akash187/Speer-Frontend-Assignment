@@ -5,6 +5,7 @@ import { Call } from '@/types/index.types'
 import { Card, Collapse, Flex, Group, Stack, Text, rem } from '@mantine/core'
 import { useDisclosure, useMediaQuery } from '@mantine/hooks'
 import { format } from 'date-fns'
+import classes from '@/styles/CallWithDetail.module.css'
 
 type IProps = {
 	call: Call
@@ -76,6 +77,7 @@ const CallWithDetail = ({ call }: IProps) => {
 				align="center"
 				justify="space-between"
 				px={isMobile ? 'xs' : 'sm'}
+				className={classes.info}
 			>
 				<Group>
 					<CallTypeIcon callType={call.call_type} direction={call.direction} />
@@ -94,6 +96,7 @@ const CallWithDetail = ({ call }: IProps) => {
 				in={opened}
 				transitionDuration={200}
 				transitionTimingFunction="linear"
+				className={classes.detail}
 			>
 				<Stack p="xs">
 					<Group justify="space-between">
