@@ -1,5 +1,6 @@
 import { archieveCalls } from '@/api'
 import CallGroupByDate from '@/components/calls/CallGroupByDate'
+import useNotificationStore from '@/store/notificationStore'
 import { CallGroupByDate as CallGroupByDateType } from '@/types/index.types'
 import { Button, Stack } from '@mantine/core'
 import { IconArchive } from '@tabler/icons-react'
@@ -10,6 +11,7 @@ type IProps = {
 }
 
 const InboxContainer = ({ callGroups }: IProps) => {
+	const { openNotification } = useNotificationStore()
 	const queryClient = useQueryClient()
 
 	const { mutate, isPending } = useMutation({
@@ -21,8 +23,12 @@ const InboxContainer = ({ callGroups }: IProps) => {
 
 			return archieveCalls(call_ids)
 		},
-		onSuccess: () => {
+		onSuccess: (message: string) => {
 			queryClient.invalidateQueries({ queryKey: ['inbox-calls'] })
+			openNotification({ type: 'Success', message })
+		},
+		onError: (error) => {
+			openNotification({ type: 'Error', message: error.message })
 		}
 	})
 
